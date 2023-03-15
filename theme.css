@@ -1,0 +1,51 @@
+.theme-dark,
+body.theme-dark {
+  color-scheme: dark;
+  --color-base-00: rgba(28, 33, 39, 0); /* main editor window [1c2127] */
+  --color-base-10: rgba(28, 33, 39, 0.5); /* code blocks */
+}
+
+/* hide text */
+.spoiler, .spoiler-show {
+  transition: all .3s;
+  position: relative;
+  color: transparent;
+  text-shadow: 0 0 12px var(--text-normal);
+  padding: .8em;
+  cursor: pointer;
+  background-color: var(--background-secondary);
+  border-radius: 4px;
+  user-select: none;
+}
+
+.spoiler-show {
+  text-shadow: 0 0 0 transparent !important;
+  color: var(--text-normal) !important;
+  user-select: auto !important;
+  cursor: auto !important;
+}
+
+.spoiler::before, .spoiler::after {
+  display: block;
+  position: absolute;
+  font-weight: 500;
+  color: var(--text-accent);
+  text-align: center;
+  text-shadow: none;
+  transition: all .3s;
+  content: 'CLICK TO SHOW';
+  opacity: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+.spoiler:hover:before {
+  opacity: 1;
+}
+
+.spoiler:hover {
+  text-shadow: 0 0 14px var(--text-normal);
+}
+/* ######### */
